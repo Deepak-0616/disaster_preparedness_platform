@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earthquake Safety Module</title>
+    <link rel="icon" type="image" href="./img/icon.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: rgb(141, 36, 36);
+            color: white;
+            padding: 1rem 2rem;
+            text-align: left;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        footer {
+            margin-top: 2rem;
+            background: #111827;
+            color: #f3f4f6;
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .card {
+            background-color: #fff;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            color: #2563eb;
+            margin-bottom: 0.5rem;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+        }
+
+        button {
+            padding: 0.5rem 1rem;
+            margin-right: 0.5rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .btn-correct {
+            background-color: #2563eb;
+            color: #fff;
+        }
+
+        .btn-wrong {
+            background-color: #ccc;
+            color: #333;
+        }
+
+        #result {
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+
+        .green {
+            color: green;
+        }
+
+        .red {
+            color: red;
+        }
+
+        a {
+            color: #2563eb;
+            text-decoration: none;
+            margin-right: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>🌍 Earthquake Safety Module</header>
+
+    <div class="container">
+
+        <h2>Interactive Exercises</h2>
+
+        <!-- Checklist -->
+        <div class="card">
+            <h3>✅ Safety Checklist</h3>
+            <ul>
+                <li>Drop, Cover, and Hold during shaking.</li>
+                <li>Stay away from glass and heavy objects.</li>
+                <li>After shaking, move to an open area.</li>
+            </ul>
+        </div>
+
+        <!-- MCQ -->
+        <div class="card">
+            <h3>📝 Quick Quiz</h3>
+            <p>What should you do first when an earthquake starts?</p>
+            <button class="btn-correct" onclick="checkAnswer(true)">Drop & Cover</button>
+            <button class="btn-wrong" onclick="checkAnswer(false)">Run Outside</button>
+            <p id="result"></p>
+        </div>
+    </div><br>
+
+    <footer>© 2025 GlitchEx | Disaster Preparedness Platform</footer>
+
+    <script>
+        function checkAnswer(correct) {
+            const result = document.getElementById("result");
+            if (correct) {
+                result.textContent = "✅ Correct! Drop & Cover is the safest.";
+                result.className = "green";
+            } else {
+                result.textContent = "❌ Incorrect! Running outside can be dangerous.";
+                result.className = "red";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

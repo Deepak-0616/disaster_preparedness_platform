@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fire Safety Module</title>
+    <link rel="icon" type="image" href="./img/icon.png">
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header,
+        footer {
+            background-color: #ef4444;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .card {
+            background: #fff;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            color: #ef4444;
+            margin-bottom: 0.5rem;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+        }
+
+        button {
+            padding: 0.5rem 1rem;
+            margin-right: 0.5rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .btn-correct {
+            background-color: #ef4444;
+            color: #fff;
+        }
+
+        .btn-wrong {
+            background-color: #ccc;
+            color: #333;
+        }
+
+        #result {
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+
+        .green {
+            color: green;
+        }
+
+        .red {
+            color: red;
+        }
+
+        nav {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        a {
+            color: #ef4444;
+            text-decoration: none;
+            margin-right: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>🔥 Fire Safety Module</header>
+
+    <div class="container">
+        <nav>
+            <a href="earthquake.html">Earthquake</a>
+            <a href="flood.html">Flood</a>
+            <a href="fire.html">Fire Safety</a>
+        </nav>
+
+        <h2>Interactive Exercises</h2>
+
+        <div class="card">
+            <h3>✅ Safety Checklist</h3>
+            <ul>
+                <li>Evacuate immediately if fire spreads.</li>
+                <li>Use stairs, never elevators.</li>
+                <li>Keep a fire extinguisher handy.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>📝 Quick Quiz</h3>
+            <p>What is the first step when you notice a fire?</p>
+            <button class="btn-correct" onclick="checkAnswer(true)">Evacuate safely</button>
+            <button class="btn-wrong" onclick="checkAnswer(false)">Look for belongings</button>
+            <p id="result"></p>
+        </div>
+    </div>
+
+    <footer>© 2025 GlitchEx | Disaster Preparedness Platform</footer>
+
+    <script>
+        function checkAnswer(correct) {
+            const result = document.getElementById("result");
+            if (correct) { result.textContent = "✅ Correct! Evacuate safely."; result.className = "green"; }
+            else { result.textContent = "❌ Incorrect! Looking for belongings is dangerous."; result.className = "red"; }
+        }
+    </script>
+
+</body>
+
+</html>

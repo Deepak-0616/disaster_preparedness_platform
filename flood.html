@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flood Preparedness Module</title>
     <link rel="icon" type="image" href="./img/icon.png">
+
     <style>
         body {
             font-family: Arial;
@@ -15,14 +16,22 @@
             padding: 0;
         }
 
-        header,
-        footer {
+        header {
             background-color: #0ea5e9;
             color: #fff;
-            text-align: center;
+            text-align: left;
             padding: 1rem;
             font-weight: bold;
             font-size: 1.2rem;
+        }
+
+        footer {
+            margin-top: 2rem;
+            background: #111827;
+            color: #f3f4f6;
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.9rem;
         }
 
         .container {
@@ -64,8 +73,8 @@
         }
 
         .btn-correct {
-            background-color: #0ea5e9;
-            color: #fff;
+            background-color: #ccc;
+            color: #333;
         }
 
         .btn-wrong {
@@ -87,33 +96,43 @@
         }
 
         nav {
-            margin-bottom: 2rem;
-            text-align: center;
+            margin-bottom: 1rem;
+            text-align: right;
+            gap: 2rem;
+            margin: 10px 0;
         }
 
         a {
-            color: #0ea5e9;
+            color: white;
             text-decoration: none;
+            font-size: 15px;
             margin-right: 1rem;
+        }
+
+        nav a:hover {
+            color: #c1d6df
         }
     </style>
 </head>
 
 <body>
 
-    <header>🌊 Flood Preparedness Module</header>
-
-    <div class="container">
+    <header> Flood Preparedness Module
         <nav>
             <a href="earthquake.html">Earthquake</a>
             <a href="flood.html">Flood</a>
             <a href="fire.html">Fire Safety</a>
+            <a href="index.html">⬅ Go Back</a>
         </nav>
+    </header>
+
+    <div class="container">
+
 
         <h2>Interactive Exercises</h2>
 
         <div class="card">
-            <h3>✅ Safety Checklist</h3>
+            <h3> Safety Checklist</h3>
             <ul>
                 <li>Move to higher ground immediately.</li>
                 <li>Avoid walking or driving through floodwaters.</li>
@@ -122,23 +141,51 @@
         </div>
 
         <div class="card">
-            <h3>📝 Quick Quiz</h3>
-            <p>What is the first step during a flood warning?</p>
-            <button class="btn-correct" onclick="checkAnswer(true)">Move to higher ground</button>
-            <button class="btn-wrong" onclick="checkAnswer(false)">Stay in basement</button>
-            <p id="result"></p>
+            <h3>Quick Quiz</h3>
+            <p>If you are trapped in a flooded building, what should you do?</p>
+            <button class="btn-correct" onclick="checkAnswer(this, true)">Move to the highest safe level and call for
+                help</button>
+            <button class="btn-wrong" onclick="checkAnswer(this, false)">Go down to the basement</button>
+            <p class="result"></p>
         </div>
+
+        <div class="card">
+            <h3>Quick Quiz</h3>
+            <p>What should you do first if you receive a flood warning?</p>
+            <button class="btn-wrong" onclick="checkAnswer(this, false)">Stay in the basement</button>
+            <button class="btn-correct" onclick="checkAnswer(this, true)">Move to higher ground immediately</button>
+            <p class="result"></p>
+        </div>
+
+        <div class="card">
+            <h3>Quick Quiz</h3>
+            <p>Is it safe to drive through floodwaters?</p>
+            <button class="btn-correct" onclick="checkAnswer(this, false)">No, it is dangerous</button>
+            <button class="btn-wrong" onclick="checkAnswer(this, true)">Yes, if the water looks shallow</button>
+            <p class="result"></p>
+        </div>
+
+        <div class="card">
+            <h3>Quick Quiz</h3>
+            <p>What should you do with electrical appliances during a flood?</p>
+            <button class="btn-wrong" onclick="checkAnswer(this, false)">Keep them running for light</button>
+            <button class="btn-correct" onclick="checkAnswer(this, true)">Turn them off and unplug safely</button>
+            <p class="result"></p>
+        </div>
+
+        <div class="card">
+            <h3>Quick Quiz</h3>
+            <p>After a flood, what is the safest way to drink water?</p>
+            <button class="btn-wrong" onclick="checkAnswer(this, false)">Use tap water directly</button>
+            <button class="btn-correct" onclick="checkAnswer(this, true)">Boil or use bottled water</button>
+            <p class="result"></p>
+        </div>
+
     </div>
 
     <footer>© 2025 GlitchEx | Disaster Preparedness Platform</footer>
 
-    <script>
-        function checkAnswer(correct) {
-            const result = document.getElementById("result");
-            if (correct) { result.textContent = "✅ Correct! Move to higher ground."; result.className = "green"; }
-            else { result.textContent = "❌ Incorrect! Staying low can be dangerous."; result.className = "red"; }
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>

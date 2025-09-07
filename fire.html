@@ -15,14 +15,22 @@
             padding: 0;
         }
 
-        header,
-        footer {
+        header {
             background-color: #ef4444;
             color: #fff;
-            text-align: center;
+            text-align: left;
             padding: 1rem;
             font-weight: bold;
             font-size: 1.2rem;
+        }
+
+        footer {
+            margin-top: 2rem;
+            background: #111827;
+            color: #f3f4f6;
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.9rem;
         }
 
         .container {
@@ -64,8 +72,8 @@
         }
 
         .btn-correct {
-            background-color: #ef4444;
-            color: #fff;
+            background-color: #ccc;
+            color: #333;
         }
 
         .btn-wrong {
@@ -88,32 +96,42 @@
 
         nav {
             margin-bottom: 2rem;
-            text-align: center;
+            text-align: right;
+            gap: 2rem;
+            margin: 10px 0;
         }
 
         a {
-            color: #ef4444;
+            color: white;
             text-decoration: none;
             margin-right: 1rem;
+            font-size: 15px;
+
+        }
+
+        nav a:hover {
+            color: #e0bbbb;
         }
     </style>
 </head>
 
 <body>
 
-    <header>🔥 Fire Safety Module</header>
-
-    <div class="container">
-        <nav>
+    <header> Fire Safety Module<nav>
             <a href="earthquake.html">Earthquake</a>
             <a href="flood.html">Flood</a>
             <a href="fire.html">Fire Safety</a>
+            <a href="index.html">⬅ Go Back</a>
         </nav>
+    </header>
+
+    <div class="container">
+
 
         <h2>Interactive Exercises</h2>
 
         <div class="card">
-            <h3>✅ Safety Checklist</h3>
+            <h3> Safety Checklist</h3>
             <ul>
                 <li>Evacuate immediately if fire spreads.</li>
                 <li>Use stairs, never elevators.</li>
@@ -121,24 +139,58 @@
             </ul>
         </div>
 
+
         <div class="card">
-            <h3>📝 Quick Quiz</h3>
-            <p>What is the first step when you notice a fire?</p>
-            <button class="btn-correct" onclick="checkAnswer(true)">Evacuate safely</button>
-            <button class="btn-wrong" onclick="checkAnswer(false)">Look for belongings</button>
-            <p id="result"></p>
+            <h3>Quick Quiz</h3>
+            <p>What is the first thing you should do if you discover a fire?</p>
+            <button class="btn-wrong" onclick="checkAnswer(this, false)">Try to put it out without telling
+                anyone</button>
+            <button class="btn-correct" onclick="checkAnswer(this, true)">Raise the alarm and alert others</button>
+            <p class="result"></p>
         </div>
+
+
+        <div class="card">
+            <h3>Quick Quiz</h3>
+            <p>During a fire drill, what should you never use?</p>
+            <button class="btn-correct" onclick="checkAnswer(this, true)">Elevators</button>
+            <button class="btn-wrong" onclick="checkAnswer(this, false)">Stairs</button>
+            <p class="result"></p>
+        </div>
+
+
+        <div class="card">
+            <h3>Quick Quiz</h3>
+            <p>If your clothes catch fire, what should you do?</p>
+            <button class="btn-wrong" onclick="checkAnswer(this, false)">Run quickly to find help</button>
+            <button class="btn-correct" onclick="checkAnswer(this, true)">Stop, Drop, and Roll</button>
+            <p class="result"></p>
+        </div>
+
+
+        <div class="card">
+            <h3>Quick Quiz</h3>
+            <p>What should you do before opening a door during a fire?</p>
+            <button class="btn-wrong" onclick="checkAnswer(this, false)">Open it quickly without checking</button>
+            <button class="btn-correct" onclick="checkAnswer(this, true)">Check if the door is hot with the back of your
+                hand</button>
+            <p class="result"></p>
+        </div>
+
+
+        <div class="card">
+            <h3>Quick Quiz</h3>
+            <p>What type of extinguisher should be used on electrical fires?</p>
+            <button class="btn-correct" onclick="checkAnswer(this, true)">CO₂ or Dry Powder extinguisher</button>
+            <button class="btn-wrong" onclick="checkAnswer(this, false)">Water extinguisher</button>
+            <p class="result"></p>
+        </div>
+
     </div>
 
     <footer>© 2025 GlitchEx | Disaster Preparedness Platform</footer>
 
-    <script>
-        function checkAnswer(correct) {
-            const result = document.getElementById("result");
-            if (correct) { result.textContent = "✅ Correct! Evacuate safely."; result.className = "green"; }
-            else { result.textContent = "❌ Incorrect! Looking for belongings is dangerous."; result.className = "red"; }
-        }
-    </script>
+    <script src="script.js"></script>
 
 </body>
 

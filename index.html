@@ -36,7 +36,7 @@
                         <p>Guidelines and scenarios to handle flood emergencies effectively.</p>
                     </div>
                 </a>
-                <a href="">
+                <a href="fire.html">
                     <div class="card">
                         <h3>Fire Safety</h3>
                         <p>Practical modules on fire drills, extinguisher use, and evacuation.</p>
@@ -49,39 +49,31 @@
             <div class="card">
                 <h2>Virtual Drills</h2>
                 <p>Simulated disaster drills for hands-on practice in a safe digital environment.</p>
-                <button onclick="alert('Virtual Drill Started!')">Start Drill</button>
+                <button onclick="alert('Virtual Drills will be added soon !')">Start Drill</button>
             </div>
         </section>
 
         <section id="alerts" style="margin-top:2rem;">
-            <h2 style="margin-bottom:1rem;">⚠️ Alerts</h2>
+            <h2 style="margin-bottom:1rem;">Alerts</h2>
             <div class="grid">
-                <!-- Flood Alert -->
+
                 <div class="card flood">
                     <div class="alert-header">
-                        <h3>🌊 Flood Warning - Coastal Region <span class="badge">NEW</span></h3>
+                        <h3> Flood Warning - Coastal Region <span class="badge">NEW</span></h3>
                         <button class="close-btn" onclick="this.parentElement.parentElement.remove()">✖</button>
                     </div>
                     <p>Issued: <span class="time">2 hrs ago</span> | Stay away from low-lying areas.</p>
-                    <button class="expand-btn" onclick="toggleDetails(this)">More Details</button>
-                    <div class="details">
-                        <p>Authorities recommend immediate evacuation of coastal villages. Avoid driving and keep
-                            emergency kits ready.</p>
-                    </div>
+
                 </div>
 
-                <!-- Heatwave Alert -->
+
                 <div class="card heat">
                     <div class="alert-header">
-                        <h3>🔥 Heatwave Alert - Tamil Nadu</h3>
+                        <h3> Heatwave Alert - Tamil Nadu</h3>
                         <button class="close-btn" onclick="this.parentElement.parentElement.remove()">✖</button>
                     </div>
                     <p>Issued: <span class="time">1 day ago</span> | Stay hydrated and indoors if possible.</p>
-                    <button class="expand-btn" onclick="toggleDetails(this)">More Details</button>
-                    <div class="details">
-                        <p>Daytime temperatures are expected to exceed 42°C. Avoid outdoor activities between 11am–4pm.
-                        </p>
-                    </div>
+
                 </div>
             </div>
         </section>

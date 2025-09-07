@@ -1,29 +1,13 @@
-// Drill simulation
-function startDrill(type) {
-    const status = document.getElementById("drill-status");
-    if (!status) return;
+function checkAnswer(button, correct) {
+    const card = button.closest(".card");
 
-    status.innerHTML = `<strong>${type}</strong> initiated... ⏳`;
-    setTimeout(() => {
-        status.innerHTML = `<strong>${type}</strong> completed successfully ✅`;
-    }, 3000);
-}
+    const result = card.querySelector(".result");
 
-// Mock alerts
-const alertsData = [
-    { title: "Flood Warning - Coastal Region", desc: "Issued 2 hrs ago | Stay away from low-lying areas." },
-    { title: "Heatwave Alert - Tamil Nadu", desc: "Issued 1 day ago | Stay hydrated and indoors." },
-    { title: "Cyclone Alert - Andhra Coast", desc: "Issued 89 hrs ago | Follow evacuation routes." }
-];
-
-window.onload = () => {
-    const container = document.getElementById("alerts-container");
-    if (container) {
-        alertsData.forEach(alert => {
-            const card = document.createElement("div");
-            card.className = "card";
-            card.innerHTML = `<h3>${alert.title}</h3><p>${alert.desc}</p>`;
-            container.appendChild(card);
-        });
+    if (correct) {
+        result.textContent = "✅ Correct!";
+        result.className = "result green";
+    } else {
+        result.textContent = "❌ Incorrect!";
+        result.className = "result red";
     }
-};
+}

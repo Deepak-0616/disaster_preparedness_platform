@@ -18,14 +18,14 @@
         header {
             background: rgb(141, 36, 36);
             color: white;
-            padding: 1rem 2rem;
+            padding: 1rem;
             text-align: left;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: 600;
         }
 
         footer {
-            margin-top: 2rem;
+            margin-bottom: -2rem;
             background: #111827;
             color: #f3f4f6;
             padding: 1rem;
@@ -72,8 +72,8 @@
         }
 
         .btn-correct {
-            background-color: #2563eb;
-            color: #fff;
+            background-color: #ccc;
+            color: #333;
         }
 
         .btn-wrong {
@@ -94,25 +94,43 @@
             color: red;
         }
 
+        nav {
+            margin-bottom: 2rem;
+            text-align: right;
+            gap: 2rem;
+            margin: 10px 0;
+        }
+
         a {
-            color: #2563eb;
+            color: white;
             text-decoration: none;
             margin-right: 1rem;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: rgb(205, 174, 174);
         }
     </style>
 </head>
 
 <body>
 
-    <header>🌍 Earthquake Safety Module</header>
+    <header> Earthquake Safety Module <nav>
+            <a href="earthquake.html">Earthquake</a>
+            <a href="flood.html">Flood</a>
+            <a href="fire.html">Fire Safety</a>
+            <a href="index.html">⬅ Go Back</a>
+        </nav>
+    </header>
 
     <div class="container">
 
         <h2>Interactive Exercises</h2>
 
-        <!-- Checklist -->
+
         <div class="card">
-            <h3>✅ Safety Checklist</h3>
+            <h3> Safety Checklist</h3>
             <ul>
                 <li>Drop, Cover, and Hold during shaking.</li>
                 <li>Stay away from glass and heavy objects.</li>
@@ -120,30 +138,54 @@
             </ul>
         </div>
 
-        <!-- MCQ -->
-        <div class="card">
-            <h3>📝 Quick Quiz</h3>
-            <p>What should you do first when an earthquake starts?</p>
-            <button class="btn-correct" onclick="checkAnswer(true)">Drop & Cover</button>
-            <button class="btn-wrong" onclick="checkAnswer(false)">Run Outside</button>
-            <p id="result"></p>
-        </div>
-    </div><br>
 
+
+        <div class="card">
+            <h3>Quick Quiz</h3>
+            <p>What should you do first when an earthquake starts?</p>
+            <button class="btn-correct" onclick="checkAnswer(this, true)">Drop & Cover</button>
+            <button class="btn-wrong" onclick="checkAnswer(this, false)">Run Outside</button>
+            <p class="result"></p>
+        </div>
+        <div class="card">
+            <h3>Quick Quiz</h3>
+            <p>Where is the safest place to take cover indoors during an earthquake?</p>
+            <button class="btn-wrong" onclick="checkAnswer(this, false)">Near windows or glass doors</button>
+            <button class="btn-correct" onclick="checkAnswer(this, true)">Under a sturdy table or desk</button>
+            <p class="result"></p>
+        </div>
+
+
+
+        <div class="card">
+            <h3>Quick Quiz</h3>
+            <p>During a fire drill, what should you never use?</p>
+            <button class="btn-wrong" onclick="checkAnswer(this, false)">Stairs</button>
+            <button class="btn-correct" onclick="checkAnswer(this, true)">Elevators</button>
+            <p class="result"></p>
+        </div>
+
+
+        <div class="card">
+            <h3>Quick Quiz</h3>
+            <p>When a tsunami warning is issued, what should you do?</p>
+            <button class="btn-correct" onclick="checkAnswer(this, true)">Move to higher ground</button>
+            <button class="btn-wrong" onclick="checkAnswer(this, false)">Go watch the waves</button>
+            <p class="result"></p>
+        </div>
+
+
+        <div class="card">
+            <h3>Quick Quiz</h3>
+            <p>In case of a power outage at night, what is safest to use?</p>
+            <button class="btn-wrong" onclick="checkAnswer(this, false)">Candle</button>
+            <button class="btn-correct" onclick="checkAnswer(this, true)">Flashlight</button>
+            <p class="result"></p>
+        </div>
+    </div>
     <footer>© 2025 GlitchEx | Disaster Preparedness Platform</footer>
 
-    <script>
-        function checkAnswer(correct) {
-            const result = document.getElementById("result");
-            if (correct) {
-                result.textContent = "✅ Correct! Drop & Cover is the safest.";
-                result.className = "green";
-            } else {
-                result.textContent = "❌ Incorrect! Running outside can be dangerous.";
-                result.className = "red";
-            }
-        }
-    </script>
+    <script src="script.js"></script>
 
 </body>
 
